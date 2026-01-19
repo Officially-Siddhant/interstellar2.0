@@ -2,7 +2,7 @@
 
 This repository takes from concepts discussed in [this](https://github.com/class-ROB-GY-7863/class_ROB-GY_7863) repository, and attempts to integrate an autonomy solution to a system of multiple nano-satellites pursuing debris in Low Earth Orbit. Control algorithms were validated in MATLAB which are discussed in a [precursor](https://github.com/Officially-Siddhant/interstellar) repository.
 
-Find the paper here: [Swarm Based Encirclement of Orbital Debris in LEO](https://linktr.ee/siddhant_baroth)
+- Find the paper here: [Swarm Based Encirclement of Orbital Debris in LEO](https://linktr.ee/siddhant_baroth)
 ---
 
 # System Requirements

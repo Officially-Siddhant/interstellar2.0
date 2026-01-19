@@ -1,0 +1,147 @@
+<mujoco model="spacecraft_nd">
+  <compiler angle="radian" inertiafromgeom="false"/>
+  <option timestep="1e-3" gravity="0 0 0" integrator="implicit"/>
+
+  <default>
+    <joint armature="0.0" damping="0.0" stiffness="0"/>
+    <geom contype="0" conaffinity="0" friction="0 0 0" rgba="0.8 0.6 0.4 1"/>
+    <motor ctrllimited="true" ctrlrange="-100 100"/>
+  </default>
+
+    <asset>
+      <texture name="skybox_tex" type="skybox" file="textures/stars_cropped.png"/>
+      <material name="skybox_mat" texture="skybox_tex" texuniform="true" reflectance="0"/>
+
+      <texture name="earth_tex" type="2d" file="textures/earth_day.png"/>
+      <!--<texture name="earth_tex" type="2d" file="textures/earth.png"/>-->
+      <material name="earth_mat" texture="earth_tex" texuniform="true" specular="0.2" shininess="0.5"/>
+
+      <!-- satellite mesh -->
+      <mesh name="sat_mesh" file="meshes/sat/Satellite.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <!-- Spacecraft 1 -->
+    <body name="spacecraft">
+      <freejoint name="base6dof"/>
+      <geom type="mesh" mesh="sat_mesh" rgba="0.7 0.7 0.8 1" contype="0" conaffinity="0"/>
+
+      <inertial pos="0 0 0" mass="1" diaginertia="1 1 1"/>
+      <site name="spacecraft_com" pos="0 0 0" size="0.005" xyaxes="1 0 0 0 1 0"/>
+      <geom name="spacecraft_axis_x" type="capsule" fromto="0 0 0  0.2 0 0" size="0.0015" rgba="1 0 0 1"/>
+      <geom name="spacecraft_axis_y" type="capsule" fromto="0 0 0  0 0.2 0" size="0.0015" rgba="0 1 0 1"/>
+      <geom name="spacecraft_axis_z" type="capsule" fromto="0 0 0  0 0 0.2" size="0.0015" rgba="0 0 1 1"/>
+    </body>
+
+    <!-- Spacecraft 2 -->
+    <body name="spacecraft2">
+      <freejoint name="base6dof2"/>
+
+      <!-- was: sphere -->
+      <!-- <geom type="sphere" size="0.01" rgba="0.8 0.2 0.2 1"/> -->
+      <geom type="mesh" mesh="sat_mesh"
+            rgba="0.8 0.2 0.2 1"
+            contype="0" conaffinity="0"/>
+
+      <inertial pos="0 0 0" mass="1" diaginertia="1 1 1"/>
+      <site name="spacecraft2_com" pos="0 0 0" size="0.005" xyaxes="1 0 0 0 1 0"/>
+      <geom name="spacecraft2_axis_x" type="capsule" fromto="0 0 0  0.2 0 0" size="0.0015" rgba="1 0 0 1"/>
+      <geom name="spacecraft2_axis_y" type="capsule" fromto="0 0 0  0 0.2 0" size="0.0015" rgba="0 1 0 1"/>
+      <geom name="spacecraft2_axis_z" type="capsule" fromto="0 0 0  0 0 0.2" size="0.0015" rgba="0 0 1 1"/>
+    </body>
+
+    <!-- Spacecraft 3 -->
+    <body name="spacecraft3">
+      <freejoint name="base6dof3"/>
+
+      <!-- was: sphere -->
+      <!-- <geom type="sphere" size="0.01" rgba="0.8 0.2 0.2 1"/> -->
+      <geom type="mesh" mesh="sat_mesh"
+            rgba="0.2 0.8 0.2 1"
+            contype="0" conaffinity="0"/>
+
+      <inertial pos="0 0 0" mass="1" diaginertia="1 1 1"/>
+      <site name="spacecraft3_com" pos="0 0 0" size="0.005" xyaxes="1 0 0 0 1 0"/>
+      <geom name="spacecraft3_axis_x" type="capsule" fromto="0 0 0  0.2 0 0" size="0.0015" rgba="1 0 0 1"/>
+      <geom name="spacecraft3_axis_y" type="capsule" fromto="0 0 0  0 0.2 0" size="0.0015" rgba="0 1 0 1"/>
+      <geom name="spacecraft3_axis_z" type="capsule" fromto="0 0 0  0 0 0.2" size="0.0015" rgba="0 0 1 1"/>
+    </body>
+
+    <!-- Spacecraft 4 -->
+    <body name="spacecraft4">
+      <freejoint name="base6dof4"/>
+
+      <!-- was: sphere -->
+      <!-- <geom type="sphere" size="0.01" rgba="0.8 0.2 0.2 1"/> -->
+      <geom type="mesh" mesh="sat_mesh"
+            rgba="0.8 0.8 0.2 1"
+            contype="0" conaffinity="0"/>
+
+      <inertial pos="0 0 0" mass="1" diaginertia="1 1 1"/>
+      <site name="spacecraft4_com" pos="0 0 0" size="0.005" xyaxes="1 0 0 0 1 0"/>
+      <geom name="spacecraft4_axis_x" type="capsule" fromto="0 0 0  0.2 0 0" size="0.0015" rgba="1 0 0 1"/>
+      <geom name="spacecraft4_axis_y" type="capsule" fromto="0 0 0  0 0.2 0" size="0.0015" rgba="0 1 0 1"/>
+      <geom name="spacecraft4_axis_z" type="capsule" fromto="0 0 0  0 0 0.2" size="0.0015" rgba="0 0 1 1"/>
+    </body>
+
+    <!-- Spacecraft 5 -->
+    <body name="spacecraft5">
+      <freejoint name="base6dof5"/>
+
+      <!-- was: sphere -->
+      <!-- <geom type="sphere" size="0.01" rgba="0.8 0.2 0.2 1"/> -->
+      <geom type="mesh" mesh="sat_mesh"
+            rgba="0.6 0.4 0.9 1"
+            contype="0" conaffinity="0"/>
+
+      <inertial pos="0 0 0" mass="1" diaginertia="1 1 1"/>
+      <site name="spacecraft5_com" pos="0 0 0" size="0.005" xyaxes="1 0 0 0 1 0"/>
+      <geom name="spacecraft5_axis_x" type="capsule" fromto="0 0 0  0.2 0 0" size="0.0015" rgba="1 0 0 1"/>
+      <geom name="spacecraft5_axis_y" type="capsule" fromto="0 0 0  0 0.2 0" size="0.0015" rgba="0 1 0 1"/>
+      <geom name="spacecraft5_axis_z" type="capsule" fromto="0 0 0  0 0 0.2" size="0.0015" rgba="0 0 1 1"/>
+    </body>
+
+    <!-- Earth -->
+    <body name="earth" pos="0 0 0">
+      <geom type="sphere" size="0.4" rgba="1 1 1 0.9" material="earth_mat" contype="0" conaffinity="0" friction="0 0 0" density="0"/>
+      <geom name="earth_axis_x" type="capsule" fromto="0 0 0  0.2 0 0" size="0.01" rgba="1 0 0 1"/>
+      <geom name="earth_axis_y" type="capsule" fromto="0 0 0  0 0.2 0" size="0.01" rgba="0 1 0 1"/>
+      <geom name="earth_axis_z" type="capsule" fromto="0 0 0  0 0 0.2" size="0.01" rgba="0 0 1 1"/>
+    </body>
+
+    <light name="sun_light" pos="0 0 5" dir="0 0 -1" diffuse="0.5 0.5 0.5" specular="0.1 0.1 0.1" ambient="0 0 0"/>
+    <camera name="fixed_camera" pos="-150 -150 -150" quat="1 0 0 0" fovy="45"/>
+
+     <!-- Debris -->
+    <body name="debris">
+      <freejoint name="debris6dof"/>
+      <geom type="box" size="0.01 0.01 0.01" rgba="0.9 0.9 0.2 1"/>
+
+      <inertial pos="0.0 0.01 0" mass="1" diaginertia="1.0 1.0 1.0"/>
+
+      <site name="debris_com" pos="0 0 0"
+            size="0.0001" rgba="1 1 0 1"
+            xyaxes="1 0 0 0 1 0"/>
+
+      <geom name="debris_axis_x" type="capsule"
+            fromto="0 0 0  0.06 0 0"
+            size="0.003" rgba="1 0 0 1"/>
+      <geom name="debris_axis_y" type="capsule"
+            fromto="0 0 0  0 0.06 0"
+            size="0.003" rgba="0 1 0 1"/>
+      <geom name="debris_axis_z" type="capsule"
+            fromto="0 0 0  0 0 0.06"
+            size="0.003" rgba="0 0 1 1"/>
+    </body>
+
+  </worldbody>
+
+  <actuator>
+    <motor name="F_world_x" joint="base6dof" gear="1 0 0 0 0 0"/>
+    <motor name="F_world_y" joint="base6dof" gear="0 1 0 0 0 0"/>
+    <motor name="F_world_z" joint="base6dof" gear="0 0 1 0 0 0"/>
+    <motor name="M_body_x" joint="base6dof" gear="0 0 0 1 0 0"/>
+    <motor name="M_body_y" joint="base6dof" gear="0 0 0 0 1 0"/>
+    <motor name="M_body_z" joint="base6dof" gear="0 0 0 0 0 1"/>
+  </actuator>
+</mujoco>

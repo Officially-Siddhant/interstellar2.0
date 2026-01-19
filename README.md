@@ -2,6 +2,7 @@
 
 This repository takes from concepts discussed in [this](https://github.com/class-ROB-GY-7863/class_ROB-GY_7863) repository, and attempts to integrate an autonomy solution to a system of multiple nano-satellites pursuing debris in Low Earth Orbit. Control algorithms were validated in MATLAB which are discussed in a [precursor](https://github.com/Officially-Siddhant/interstellar) repository.
 
+Find the paper here: [Swarm Based Encirclement of Orbital Debris in LEO](https://linktr.ee/siddhant_baroth)
 ---
 
 # System Requirements
@@ -46,4 +47,4 @@ MuJoCo is extremely lightweight. It gets the job done and to some degree of sati
 
 Things such as working with J2 perturbations, oblateness, multiple coasting debris and using model predictive control instead of classical control techniques are currently in development.
 
-Using differential drag as a means of mobility in LEO is also an interesting track - it has been tested on CubeSats! 
+Using differential drag as a means of mobility in LEO is also an interesting track - it has been tested on CubeSats!
